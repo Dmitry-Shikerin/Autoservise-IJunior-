@@ -220,9 +220,10 @@ namespace Автосервис_IJunior_
             car.ShowInfo();
             List<Detail> brokenDetails = GetBrokenDetails(car);
             int sumAllRepairs = CalculateSumAllRepairs(brokenDetails);
-            RepairCar(brokenDetails, car);
+
             if (driver.CanPay(sumAllRepairs))
             {
+                RepairCar(brokenDetails, car);
                 _moneyBalance += sumAllRepairs;
                 driver.Pay(sumAllRepairs);
             }
